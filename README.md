@@ -27,11 +27,10 @@ Sets up Node.js for Chattrbox's server. Backend that allows users to chat with a
 
 **In Package.json**
 
-| Commands | Meaning |
-| :---: | :---: |
-| npm install --save-dev nodemon  | We don't have to keep quitting/rerunning on terminal  |
-| npm start (in package.json)     | Starts Node server  |
-| nodemon module (in package.json)| Automates the work of restarting the service (don't have to stop in terminal then do the npm start command again) |
+| Commands       | Meaning                                      |
+| :---:          | :---:                                        |
+| npm start      | Starts Node server                           |
+| nodemon module | Automates the work of restarting the service |
 
 ## Demo
 
