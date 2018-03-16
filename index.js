@@ -2,7 +2,7 @@ var http = require("http");
 var fs = require("fs"); //import Node.js file system module
 //var path = require("path"); //finds file that was requested
 var extract = require("./extract"); //uses extract.js
-
+var wss = require("./websockets-server");
 var handleError = function(err, res) {
   res.writeHead(404);
   res.end();
