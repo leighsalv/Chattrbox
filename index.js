@@ -2,15 +2,22 @@ var http = require("http");
 var fs = require("fs"); //import Node.js file system module
 //var path = require("path"); //finds file that was requested
 var extract = require("./extract"); //uses extract.js
-var errorFilePath = "app/error.html";
 var wss = require("./websockets-server");
+var mime = require("mime");
+var errorFilePath = "app/error.html";
+
 var handleError = function(err, res) {
-  res.writeHead(404);
-  res.end();
+  fs.readFile(errorFilePath, function(err, data) {
+    res.writeHead(404, {
+      "Content-Type": mime.getType(errorFilePath)
+    });
+    res.write(data);
+    res.end();
+  });
 };
 
 //function is called for every HTTP request
-var server = http.createServer(function(req,res){
+var server = http.createServer(function(req, res) {
   console.log("Responding to a request.");
   //res.end("<h1>Hello, World!!</h1>");
   //callback checks what file the browser is requesting
@@ -24,20 +31,15 @@ var server = http.createServer(function(req,res){
   //readFile method takes in a filename and a callback
   //inside the callback, the contents of file are sent
   var filePath = extract(req.url);
-  fs.readFile(filePath, function(err, data){
-    if(err) {
-      fs.readFile(errorFilePath, function(err,data){
-        res.writeHead(400, {"Content-Type": "text/html"}); //media type
-        res.write(data);
-        res.end();
-      });
-
-      //handleError(err, res);
-      //return;
+  fs.readFile(filePath, function(err, data) {
+    if (err) {
+      handleError(err, res);
+      return;
     } else {
+      res.setHeader("Content-Type", mime.getType(filePath));
       res.end(data);
     }
   });
 });
 
-server.listen(3000); //binds to a port
+server.listen(3000); //binds to a port*/

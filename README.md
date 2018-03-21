@@ -14,7 +14,6 @@ Sets up Node.js for Chattrbox's server. Backend that allows users to chat with a
 
 `npm install --save-dev nodemon` on terminal
 
-
 ### Run In Terminal
 
 `cd/directory-of-Chattrbox/Chattrbox-master` change _directory-of-Chattrbox_ to the directory in which you downloaded the repo
@@ -27,11 +26,11 @@ Sets up Node.js for Chattrbox's server. Backend that allows users to chat with a
 
 **In Package.json**
 
-| Commands       | Meaning                                      |
-| :---:          | :---:                                        |
-| npm start      | Starts Node server                           |
+|    Commands    |                    Meaning                   |
+| :------------: | :------------------------------------------: |
+|    npm start   |              Starts Node server              |
 | nodemon module | Automates the work of restarting the service |
 
 ## Demo
 
-<!-- ![alt text](Coffeerun2-Demo.gif) -->
+![alt text](ChatterboxDemo.gif)
