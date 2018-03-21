@@ -2,6 +2,7 @@ var http = require("http");
 var fs = require("fs"); //import Node.js file system module
 //var path = require("path"); //finds file that was requested
 var extract = require("./extract"); //uses extract.js
+/*eslint-disable no-unused-vars*/
 var wss = require("./websockets-server");
 var mime = require("mime");
 var errorFilePath = "app/error.html";

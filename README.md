@@ -33,4 +33,4 @@ Sets up Node.js for Chattrbox's server. Backend that allows users to chat with a
 
 ## Demo
 
-![alt text](ChatterboxDemo.gif)
+![alt text](ChattrboxDemo.gif)
